@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-white font-sans antialiased;
+    font-feature-settings: 'ss01', 'ss02', 'cv11';
+  }
+  ::selection {
+    background: #C5FF4A;
+    color: #05060A;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-lime-400 text-ink-950 px-6 py-3 font-medium tracking-tight hover:bg-lime-500 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 text-white px-6 py-3 font-medium tracking-tight hover:border-white/40 hover:bg-white/5 transition-colors;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-mono text-white/70;
+  }
+  .card {
+    @apply rounded-2xl border border-white/10 bg-ink-900/60 backdrop-blur-sm;
+  }
+  .grad-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, #5BC0FF 50%, #C5FF4A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ring-soft {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 30px 80px -30px rgba(31,168,255,0.35);
+  }
+}
+
+/* Decorative grid lines */
+.bg-lines {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+}
